@@ -1,0 +1,57 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 설명 */
+.desc {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* 호버 효과 */
+.container:hover {
+  cursor: pointer;
+  transition: 0.3s;
+  transform: scale(1.05); /* 호버 시 크기를 1.05배로 확대 */
+}
+
+.container:not(:hover) {
+  transition: 0.3s; /* mouse out도 애니메이션으로*/
+}
+
+/* 카드 */
+.card {
+  height: 45vh;
+
+  transition: 0.7s; /* 애니메이션 속도 0.7초 */
+  transform-style: preserve-3d; /* 자식 요소들을 렌더링하는 방법을 결정. 기본은 flat, 지금은 3D로 설정.*/
+}
+
+/* 뒤집히면(클릭하면) */
+.card.flipped {
+  transform: rotateY(180deg); /* 클릭해서 flipped가 true면 y축으로 180도 */
+}
+
+/* 앞면 */
+.front {
+  transform: rotateY(180deg); /* 클릭해서 flipped가 false면 y축으로 180도 */
+}
+
+/* 앞, 뒤 공통 속성 */
+.front,
+.back {
+  /* 정렬 */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  object-fit: cover; /* 부모 요소에 꽉 차도록 */
+
+  position: absolute; /* 앞면과 뒷면이 겹치도록 */
+
+  backface-visibility: hidden; /* 반대쪽이 보이지 않도록 */
+}
