@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import './App.css';
+import './styles/App.css';
 
-import jokerFront from './joker_front.png';
-import jokerBack from './joker_back.jpg';
+import jokerFront from './assets/joker_front.png';
+import jokerBack from './assets/joker_back.jpg';
 
 function App() {
   // 클릭하면 상태 변경. true : 뒤집힘, false : 뒤집히지 않음(기본값)
