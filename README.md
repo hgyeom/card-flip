@@ -2,8 +2,8 @@
 
 clone 
 
-npm install
-
 cd 폴더
+
+npm install
 
 npm start
